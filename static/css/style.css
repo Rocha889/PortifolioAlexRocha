@@ -1,0 +1,185 @@
+/* Estilos gerais */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #1abc9c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-color);
+}
+
+/* Estilos da tela de login */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.login-header h2 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.login-header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.login-form {
+    padding: 30px 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 42px;
+    cursor: pointer;
+    color: #999;
+}
+
+.toggle-password:hover {
+    color: var(--secondary-color);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn i {
+    margin-left: 8px;
+}
+
+.login-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.login-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+.login-message.error {
+    color: var(--error-color);
+}
+
+.login-message.success {
+    color: var(--success-color);
+}
+
+.login-footer {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    color: #777;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 10px;
+    }
+    
+    .login-header {
+        padding: 20px 15px;
+    }
+    
+    .login-form {
+        padding: 20px 15px;
+    }
+}

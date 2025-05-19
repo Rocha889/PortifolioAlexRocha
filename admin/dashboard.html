@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Portfólio Power BI</title>
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar de navegação -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Painel Admin</h2>
+                <span class="admin-name">Administrador</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="profile"><i class="fas fa-user"></i> Perfil</a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="education"><i class="fas fa-graduation-cap"></i> Formação</a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="experience"><i class="fas fa-briefcase"></i> Experiência</a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="portfolio"><i class="fas fa-chart-bar"></i> Projetos Power BI</a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="contact"><i class="fas fa-envelope"></i> Contato</a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="settings"><i class="fas fa-cog"></i> Configurações</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="header-title">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="previewBtn">
+                        <i class="fas fa-eye"></i> Visualizar Site
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-outline dropdown-toggle">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" data-section="profile"><i class="fas fa-user"></i> Meu Perfil</a>
+                            <a href="#" data-section="settings"><i class="fas fa-cog"></i> Configurações</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" id="dropdownLogout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Seções de conteúdo -->
+            <div class="content-sections">
+                <!-- Dashboard -->
+                <section class="content-section active" id="dashboard">
+                    <div class="section-header">
+                        <h2>Visão Geral</h2>
+                        <p>Bem-vindo ao seu painel administrativo. Aqui você pode gerenciar todo o conteúdo do seu portfólio.</p>
+                    </div>
+                    
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Projetos</h3>
+                                <p class="stat-number">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Experiências</h3>
+                                <p class="stat-number">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Formações</h3>
+                                <p class="stat-number">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Certificados</h3>
+                                <p class="stat-number">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h3>Ações Rápidas</h3>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" data-section="profile">
+                                <i class="fas fa-user-edit"></i> Editar Perfil
+                            </button>
+                            <button class="btn btn-primary" data-section="portfolio">
+                                <i class="fas fa-plus-circle"></i> Adicionar Projeto
+                            </button>
+                            <button class="btn btn-primary" data-section="experience">
+                                <i class="fas fa-plus-circle"></i> Adicionar Experiência
+                            </button>
+                            <button class="btn btn-primary" data-section="education">
+                                <i class="fas fa-plus-circle"></i> Adicionar Formação
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <h3>Atividade Recente</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-edit"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>Bem-vindo ao seu novo painel administrativo!</p>
+                                    <span class="activity-time">Agora</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Perfil -->
+                <section class="content-section" id="profile">
+                    <div class="section-header">
+                        <h2>Editar Perfil</h2>
+                        <p>Atualize suas informações pessoais e profissionais.</p>
+                    </div>
+                    
+                    <div class="edit-form">
+                        <form id="profileForm">
+                            <div class="form-group">
+                                <label for="profilePhoto">Foto de Perfil</label>
+                                <div class="profile-photo-upload">
+                                    <div class="current-photo">
+                                        <img src="../static/img/default-profile.png" alt="Foto de Perfil" id="currentPhoto">
+                                    </div>
+                                    <div class="upload-controls">
+                                        <input type="file" id="profilePhoto" accept="image/*">
+                                        <button type="button" class="btn btn-outline">Escolher Arquivo</button>
+                                        <p class="help-text">Recomendado: 300x300px, máximo 2MB</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Nome Completo</label>
+                                    <input type="text" id="fullName" placeholder="Seu nome completo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="jobTitle">Cargo/Título</label>
+                                    <input type="text" id="jobTitle" placeholder="Ex: Analista de BI">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="aboutMe">Sobre Mim</label>
+                                <textarea id="aboutMe" rows="5" placeholder="Descreva brevemente sua trajetória profissional e especialidades..."></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="seu.email@exemplo.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefone</label>
+                                    <input type="tel" id="phone" placeholder="(00) 00000-0000">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Redes Sociais</label>
+                                <div class="social-inputs">
+                                    <div class="social-input">
+                                        <i class="fab fa-linkedin"></i>
+                                        <input type="url" placeholder="URL do LinkedIn">
+                                    </div>
+                                    <div class="social-input">
+                                        <i class="fab fa-github"></i>
+                                        <input type="url" placeholder="URL do GitHub">
+                                    </div>
+                                    <div class="social-input">
+                                        <i class="fab fa-twitter"></i>
+                                        <input type="url" placeholder="URL do Twitter">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-text add-social">
+                                    <i class="fas fa-plus-circle"></i> Adicionar outra rede
+                                </button>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Outras seções serão implementadas de forma semelhante -->
+                <section class="content-section" id="education">
+                    <div class="section-header">
+                        <h2>Formação e Certificados</h2>
+                        <p>Gerencie suas formações acadêmicas e certificações profissionais.</p>
+                    </div>
+                    
+                    <div class="section-actions">
+                        <button class="btn btn-primary" id="addEducationBtn">
+                            <i class="fas fa-plus"></i> Adicionar Formação
+                        </button>
+                        <button class="btn btn-primary" id="addCertificateBtn">
+                            <i class="fas fa-plus"></i> Adicionar Certificado
+                        </button>
+                    </div>
+                    
+                    <div class="content-tabs">
+                        <div class="tab active" data-tab="education-tab">Formação Acadêmica</div>
+                        <div class="tab" data-tab="certificates-tab">Certificados</div>
+                    </div>
+                    
+                    <div class="tab-content active" id="education-tab">
+                        <div class="empty-state">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Nenhuma formação acadêmica cadastrada</h3>
+                            <p>Adicione sua formação acadêmica para exibir no seu portfólio.</p>
+                            <button class="btn btn-primary" id="emptyAddEducationBtn">
+                                <i class="fas fa-plus"></i> Adicionar Formação
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="certificates-tab">
+                        <div class="empty-state">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Nenhum certificado cadastrado</h3>
+                            <p>Adicione seus certificados profissionais para exibir no seu portfólio.</p>
+                            <button class="btn btn-primary" id="emptyAddCertificateBtn">
+                                <i class="fas fa-plus"></i> Adicionar Certificado
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section" id="experience">
+                    <div class="section-header">
+                        <h2>Experiência Profissional</h2>
+                        <p>Gerencie seu histórico profissional para a timeline interativa.</p>
+                    </div>
+                    
+                    <div class="section-actions">
+                        <button class="btn btn-primary" id="addExperienceBtn">
+                            <i class="fas fa-plus"></i> Adicionar Experiência
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Nenhuma experiência profissional cadastrada</h3>
+                        <p>Adicione suas experiências profissionais para exibir na timeline do seu portfólio.</p>
+                        <button class="btn btn-primary" id="emptyAddExperienceBtn">
+                            <i class="fas fa-plus"></i> Adicionar Experiência
+                        </button>
+                    </div>
+                </section>
+
+                <section class="content-section" id="portfolio">
+                    <div class="section-header">
+                        <h2>Projetos Power BI</h2>
+                        <p>Gerencie seus projetos e visualizações de Power BI.</p>
+                    </div>
+                    
+                    <div class="section-actions">
+                        <button class="btn btn-primary" id="addProjectBtn">
+                            <i class="fas fa-plus"></i> Adicionar Projeto
+                        </button>
+                    </div>
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Nenhum projeto cadastrado</h3>
+                        <p>Adicione seus projetos de Power BI para exibir no seu portfólio.</p>
+                        <button class="btn btn-primary" id="emptyAddProjectBtn">
+                            <i class="fas fa-plus"></i> Adicionar Projeto
+                        </button>
+                    </div>
+                </section>
+
+                <section class="content-section" id="contact">
+                    <div class="section-header">
+                        <h2>Configurações de Contato</h2>
+                        <p>Configure as informações de contato e o formulário do seu portfólio.</p>
+                    </div>
+                    
+                    <div class="edit-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="contactEmail">Email de Contato</label>
+                                <input type="email" id="contactEmail" placeholder="email@exemplo.com">
+                                <p class="help-text">Este email receberá as mensagens do formulário de contato.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Campos do Formulário</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="nameField" checked disabled>
+                                        <label for="nameField">Nome (obrigatório)</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="emailField" checked disabled>
+                                        <label for="emailField">Email (obrigatório)</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="phoneField" checked>
+                                        <label for="phoneField">Telefone</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="subjectField" checked>
+                                        <label for="subjectField">Assunto</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="messageField" checked disabled>
+                                        <label for="messageField">Mensagem (obrigatório)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="thankYouMessage">Mensagem de Agradecimento</label>
+                                <textarea id="thankYouMessage" rows="3" placeholder="Mensagem exibida após o envio do formulário...">Obrigado pelo contato! Retornarei em breve.</textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="content-section" id="settings">
+                    <div class="section-header">
+                        <h2>Configurações do Site</h2>
+                        <p>Configure as opções gerais do seu portfólio.</p>
+                    </div>
+                    
+                    <div class="edit-form">
+                        <form id="settingsForm">
+                            <div class="form-group">
+                                <label for="siteTitle">Título do Site</label>
+                                <input type="text" id="siteTitle" placeholder="Meu Portfólio Power BI">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="siteFavicon">Favicon</label>
+                                <div class="file-upload">
+                                    <input type="file" id="siteFavicon" accept="image/x-icon,image/png">
+                                    <button type="button" class="btn btn-outline">Escolher Arquivo</button>
+                                    <span class="file-name">Nenhum arquivo selecionado</span>
+                                </div>
+                                <p class="help-text">Recomendado: formato .ico ou .png, 32x32px</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Cores do Site</label>
+                                <div class="color-pickers">
+                                    <div class="color-picker">
+                                        <label for="primaryColor">Cor Primária</label>
+                                        <input type="color" id="primaryColor" value="#3498db">
+                                    </div>
+                                    <div class="color-picker">
+                                        <label for="secondaryColor">Cor Secundária</label>
+                                        <input type="color" id="secondaryColor" value="#2c3e50">
+                                    </div>
+                                    <div class="color-picker">
+                                        <label for="accentColor">Cor de Destaque</label>
+                                        <input type="color" id="accentColor" value="#1abc9c">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Configurações de Segurança</label>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="adminUsername">Nome de Usuário</label>
+                                        <input type="text" id="adminUsername" value="admin">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="adminPassword">Nova Senha</label>
+                                        <input type="password" id="adminPassword" placeholder="Digite para alterar">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modais -->
+    <div class="modal" id="addEducationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Adicionar Formação</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="educationForm">
+                    <div class="form-group">
+                        <label for="degreeTitle">Título/Grau</label>
+                        <input type="text" id="degreeTitle" placeholder="Ex: Bacharelado em Sistemas de Informação" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="institution">Instituição</label>
+                        <input type="text" id="institution" placeholder="Nome da instituição de ensino" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">Data de Início</label>
+                            <input type="month" id="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">Data de Conclusão</label>
+                            <input type="month" id="endDate">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="currentEducation">
+                                <label for="currentEducation">Em andamento</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="educationDescription">Descrição</label>
+                        <textarea id="educationDescription" rows="3" placeholder="Descreva detalhes sobre o curso..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Cancelar</button>
+                <button class="btn btn-primary" id="saveEducationBtn">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/js/admin.js"></script>
+</body>
+</html>

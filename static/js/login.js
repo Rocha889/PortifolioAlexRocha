@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Redirecionar para o painel administrativo após login
                 setTimeout(() => {
-                    window.location.href = './admin/dashboard.html';
+                    window.location.href = './admin/dashboard.html;
                 }, 1000);
             } else {
                 showMessage('Usuário ou senha incorretos. Tente novamente.', 'error');
